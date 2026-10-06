@@ -1,0 +1,21 @@
+AI Nexus is a Local Intelligence platform that combines Retrieval-Augmented Generation, Large Language Models, and Ollama.
+
+RAG stands for Retrieval-Augmented Generation. RAG allows an AI system to retrieve relevant information from documents before generating an answer.
+
+The RAG process starts by loading documents into the system. The documents are divided into smaller chunks. Each chunk is converted into an embedding. Embeddings are numerical representations of text.
+
+The embeddings are stored in a vector database. When a user asks a question, the question is also converted into an embedding. The system searches the vector database to find the most relevant document chunks.
+
+The retrieved information is then provided to the Large Language Model as context. The LLM uses the context to generate a more relevant answer.
+
+Ollama allows Large Language Models to run locally on a computer. Local AI can provide better control over data and reduce the need to send documents to external cloud services.
+
+A Large Language Model, or LLM, is an artificial intelligence model that can understand and generate human language.
+
+AI Nexus uses Ollama to run the Llama 3.2 language model locally.
+
+ChromaDB is used as the vector database for storing and searching document embeddings.
+
+The main components of AI Nexus are the user interface, Flask backend, document loader, text splitter, embedding model, vector database, RAG retrieval system, Ollama and LLM.
+
+AI Nexus can be used for educational documents, technical documents, research material, project documentation, manuals and organizational knowledge bases.

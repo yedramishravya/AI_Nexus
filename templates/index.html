@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Nexus | Local Intelligence</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="background-grid"></div>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+
+    <div class="container">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="logo-area">
+
+                <div class="ai-logo">
+
+                    <div class="logo-core">
+                        AI
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <h1>AI Nexus</h1>
+
+                    <p>
+                        Local Intelligence with
+                        <span>RAG</span> •
+                        <span>LLM</span> •
+                        <span>Ollama</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="privacy-badge">
+
+                🔒 100% Local AI
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= STATUS ================= -->
+
+        <div class="status-bar">
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                Local AI System Online
+
+            </div>
+
+
+            <div class="model-status">
+
+                <span>●</span>
+
+                Llama 3.2
+
+            </div>
+
+
+            <div class="model-status">
+
+                <span>●</span>
+
+                Ollama Connected
+
+            </div>
+
+
+            <div class="model-status">
+
+                <span>●</span>
+
+                ChromaDB Ready
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= STATS ================= -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <h3>Local LLM</h3>
+
+                    <p>Llama 3.2</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔎
+                </div>
+
+                <div>
+
+                    <h3>RAG Engine</h3>
+
+                    <p>Active</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>Knowledge Base</h3>
+
+                    <p>Connected</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <h3>Processing</h3>
+
+                    <p>Local & Private</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= MAIN GRID ================= -->
+
+        <div class="main-grid">
+
+
+            <!-- ================= CHAT ================= -->
+
+            <section class="chat-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+
+                            <span class="sparkle">✦</span>
+
+                            AI Nexus Assistant
+
+                        </h2>
+
+                        <p>
+                            Ask questions from your local knowledge base
+                        </p>
+
+                    </div>
+
+
+                    <div class="online-badge">
+
+                        ● ONLINE
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHAT BOX -->
+
+                <div class="chat-box"
+                     id="chatBox">
+
+
+                    <!-- Welcome -->
+
+                    <div class="welcome-message">
+
+                        <div class="robot">
+
+                            🤖
+
+                        </div>
+
+
+                        <h2>
+                            Welcome to AI Nexus
+                        </h2>
+
+
+                        <p>
+
+                            Your private AI assistant powered by
+                            Retrieval-Augmented Generation.
+
+                        </p>
+
+
+                        <div class="welcome-features">
+
+                            <span>🔒 Private</span>
+
+                            <span>⚡ Fast</span>
+
+                            <span>📚 RAG Powered</span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- INPUT -->
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="question"
+                        placeholder="Ask AI Nexus something..."
+                        autocomplete="off"
+                    >
+
+                    <button onclick="askQuestion()">
+
+                        <span>Ask AI</span>
+
+                        ➤
+
+                    </button>
+
+                </div>
+
+
+                <div class="input-info">
+
+                    Press <b>Enter</b> to send
+                    • Your questions stay on your machine
+
+                </div>
+
+
+
+                <!-- QUICK QUESTIONS -->
+
+                <div class="quick-section">
+
+                    <h3>
+                        ✨ Try asking
+                    </h3>
+
+
+                    <div class="quick-buttons">
+
+                        <button onclick="setQuestion('What information is available in the knowledge base?')">
+
+                            📚 Knowledge Base
+
+                        </button>
+
+
+                        <button onclick="setQuestion('Give me a summary of the knowledge base.')">
+
+                            📝 Summarize
+
+                        </button>
+
+
+                        <button onclick="setQuestion('Explain the main topic.')">
+
+                            💡 Explain Topic
+
+                        </button>
+
+
+                        <button onclick="setQuestion('What are the important points?')">
+
+                            🔍 Important Points
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= RIGHT PANEL ================= -->
+
+            <aside class="right-panel">
+
+
+                <!-- AI ARCHITECTURE -->
+
+                <div class="info-card">
+
+                    <div class="card-title">
+
+                        <h3>⚙ AI Architecture</h3>
+
+                        <span>LIVE</span>
+
+                    </div>
+
+
+                    <div class="pipeline">
+
+
+                        <div class="pipeline-item">
+
+                            <div class="pipeline-icon">
+                                👤
+                            </div>
+
+                            <div>
+
+                                <strong>User Query</strong>
+
+                                <small>
+                                    Your question
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+
+                            <div class="pipeline-icon">
+                                🔎
+                            </div>
+
+                            <div>
+
+                                <strong>Vector Search</strong>
+
+                                <small>
+                                    ChromaDB
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+
+                            <div class="pipeline-icon">
+                                📚
+                            </div>
+
+                            <div>
+
+                                <strong>Context Retrieval</strong>
+
+                                <small>
+                                    Top 3 chunks
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+
+                            <div class="pipeline-icon">
+                                🧠
+                            </div>
+
+                            <div>
+
+                                <strong>Llama 3.2</strong>
+
+                                <small>
+                                    Local LLM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+
+                            <div class="pipeline-icon">
+                                ✨
+                            </div>
+
+                            <div>
+
+                                <strong>AI Response</strong>
+
+                                <small>
+                                    Generated locally
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TECHNOLOGY -->
+
+                <div class="info-card">
+
+                    <div class="card-title">
+
+                        <h3>🛠 Technology Stack</h3>
+
+                    </div>
+
+
+                    <div class="tech">
+
+                        <span>🐍 Python / Flask</span>
+
+                        <b>✓</b>
+
+                    </div>
+
+
+                    <div class="tech">
+
+                        <span>🦜 LangChain</span>
+
+                        <b>✓</b>
+
+                    </div>
+
+
+                    <div class="tech">
+
+                        <span>🦙 Ollama</span>
+
+                        <b>✓</b>
+
+                    </div>
+
+
+                    <div class="tech">
+
+                        <span>💬 Llama 3.2</span>
+
+                        <b>✓</b>
+
+                    </div>
+
+
+                    <div class="tech">
+
+                        <span>🗃 ChromaDB</span>
+
+                        <b>✓</b>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRIVACY -->
+
+                <div class="privacy-card">
+
+                    <div class="privacy-icon">
+                        🔐
+                    </div>
+
+                    <div>
+
+                        <h3>Private by Design</h3>
+
+                        <p>
+
+                            Your documents and questions
+                            are processed locally.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <div>
+
+                <b>AI Nexus</b>
+
+                • Local Intelligence Platform
+
+            </div>
+
+
+            <div>
+
+                RAG + LLM + Ollama
+
+                •
+
+                <span>Built for Privacy</span>
+
+            </div>
+
+        </footer>
+
+
+    </div>
+
+
+
+<script>
+
+
+/* =====================================
+   ENTER KEY
+===================================== */
+
+document
+    .getElementById("question")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                askQuestion();
+
+            }
+
+        }
+    );
+
+
+
+/* =====================================
+   QUICK QUESTION
+===================================== */
+
+function setQuestion(text) {
+
+    document.getElementById("question").value = text;
+
+    document.getElementById("question").focus();
+
+}
+
+
+
+/* =====================================
+   ASK QUESTION
+===================================== */
+
+async function askQuestion() {
+
+
+    const input =
+        document.getElementById("question");
+
+    const chat =
+        document.getElementById("chatBox");
+
+
+    const question =
+        input.value.trim();
+
+
+    if (!question) {
+
+        return;
+
+    }
+
+
+    /* USER MESSAGE */
+
+    const userMessage =
+        document.createElement("div");
+
+    userMessage.className =
+        "message user";
+
+
+    userMessage.innerHTML = `
+
+        <div class="avatar user-avatar">
+            👤
+        </div>
+
+        <div class="bubble">
+
+            <strong>You</strong>
+
+            <p>${escapeHTML(question)}</p>
+
+        </div>
+
+    `;
+
+
+    chat.appendChild(userMessage);
+
+
+    input.value = "";
+
+
+    /* AI THINKING */
+
+    const loading =
+        document.createElement("div");
+
+    loading.className =
+        "message bot";
+
+
+    loading.innerHTML = `
+
+        <div class="avatar ai-avatar">
+            ✦
+        </div>
+
+        <div class="bubble">
+
+            <strong>AI Nexus</strong>
+
+            <div class="thinking">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <label>
+                    Searching knowledge base...
+                </label>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    chat.appendChild(loading);
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+
+    try {
+
+
+        const response =
+            await fetch("/ask", {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/json"
+
+                },
+
+                body: JSON.stringify({
+
+                    question: question
+
+                })
+
+            });
+
+
+        const data =
+            await response.json();
+
+
+        loading.remove();
+
+
+        /* AI RESPONSE */
+
+        const botMessage =
+            document.createElement("div");
+
+        botMessage.className =
+            "message bot";
+
+
+        botMessage.innerHTML = `
+
+            <div class="avatar ai-avatar">
+                ✦
+            </div>
+
+            <div class="bubble">
+
+                <strong>AI Nexus</strong>
+
+                <p>${escapeHTML(data.answer)}</p>
+
+            </div>
+
+        `;
+
+
+        chat.appendChild(botMessage);
+
+
+    }
+
+    catch(error) {
+
+
+        loading.remove();
+
+
+        const errorMessage =
+            document.createElement("div");
+
+        errorMessage.className =
+            "message bot";
+
+
+        errorMessage.innerHTML = `
+
+            <div class="avatar ai-avatar">
+                ⚠
+            </div>
+
+            <div class="bubble">
+
+                <strong>AI Nexus</strong>
+
+                <p>
+                    Unable to connect to the AI system.
+                    Please check whether Flask and Ollama are running.
+                </p>
+
+            </div>
+
+        `;
+
+
+        chat.appendChild(errorMessage);
+
+    }
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+}
+
+
+
+/* =====================================
+   SECURITY
+===================================== */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
